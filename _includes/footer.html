@@ -4,6 +4,30 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
+                    <!-- Gitalk 评论 start  -->
+{% if site.gitalk.enable %}
+<!-- Link Gitalk 的支持文件  -->
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk@latest/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+    <script type="text/javascript">
+    var gitalk = new Gitalk({
+
+    // gitalk的主要参数
+		clientID: '0577550c9143d6ab584b',
+		clientSecret: '3027a4877d25527ccbe89e99243cc4e3b985ee65',
+		repo: 'leonli0912.github.io',
+		owner: 'leonli0912',
+		admin: ['leonli0912'],
+		id: '页面的唯一标识，gitalk会根据这个标识自动创建的issue的标签',
+    
+    });
+    gitalk.render('gitalk-container');
+</script>
+{% endif %}
+<!-- Gitalk end -->
+                    
                     {% if site.RSS %}
                     <li>
                         <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
